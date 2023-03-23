@@ -1,8 +1,10 @@
 .aside-container {
-    width: 300px;
+    width: calc(100% - 32px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 16px;
+    transition: 500ms;
 
     &.hide-aside {
         display: none;
@@ -11,7 +13,7 @@
 
     .avatar {
         border-radius: 100%;
-        max-width: 200px;
+        max-width: 150px;
         border: 5px solid #c56534;
     }
 
@@ -20,15 +22,21 @@
         font-size: 1.4rem;
         text-align: center;
         margin: 0;
-        border-bottom: 1px solid #272727;
+        border-bottom: 1px solid #c56534;
         padding: 32px 0;
+        margin-bottom: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
     }
 
     .btn-close-aside {
         position: absolute;
-        top: 30px;
+        top: 25px;
         left: 259px;
         cursor: pointer;
+        --ggs: 2;
 
         &:hover {
             background-color: #393939;
@@ -37,8 +45,7 @@
     }
 
     .aside-btn-list {
-        width: calc(100% - 32px);
-        padding: 16px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         overflow: auto;
@@ -49,6 +56,9 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
             i {
                 margin-right: 16px;
@@ -58,5 +68,12 @@
                 background-color: #272727;
             }
         }
+    }
+
+    &.hide-aside {
+        position: absolute;
+        left: -300px;
+        transition-delay: 300ms;
+        transition: 300ms;
     }
 }

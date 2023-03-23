@@ -1,8 +1,28 @@
-.menu-hamburger {
-    cursor: pointer;
-    
-    &:hover {
-        background-color: #393939;
-        border-radius: 100%;
+.container-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    .icon-container {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+
+        .horizontal-bar {
+            background-color: white;
+            width: 25px;
+            height: 3px;
+            margin: 3.7px;
+        }
+
+        &:hover {
+            background-color: #393939;
+            border-radius: 100%;
+        }
     }
 }

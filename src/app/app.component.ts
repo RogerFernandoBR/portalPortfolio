@@ -11,12 +11,12 @@ import { LayoutService } from './services/layout.service';
 
 export class AppComponent {
   title = 'portalPortifolio';
-  asideState: boolean = true;
+  hideAside: boolean = true;
   viewPortWidth: number = window.innerWidth;
 
   constructor(private layoutService: LayoutService) {
     this.layoutService.toggleAsideLeft.subscribe((x) => {
-      this.asideState = x;
+      this.hideAside = x;
     })
   }
 

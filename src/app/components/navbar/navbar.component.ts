@@ -7,11 +7,11 @@ import { LayoutService } from 'src/app/services/layout.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  asideState: boolean = true;
+  hideAside: boolean = true;
   
   constructor(private layoutService: LayoutService) {
     this.layoutService.toggleAsideLeft.subscribe((x) => {
-      this.asideState = x;
+      this.hideAside = x;
     })
   }
 

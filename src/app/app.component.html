@@ -1,5 +1,5 @@
-<div class="grid-mercurio" [ngClass]="{'hide-aside' : asideState}" (window:resize)="onResize()">
-    <app-aside class="grid-item aside-left" [ngClass]="{'hide-aside' : asideState}"></app-aside>
+<div class="grid-mercurio" [ngClass]="{'hide-aside' : hideAside}" (window:resize)="onResize()">
+    <app-aside class="grid-item aside"></app-aside>
     <app-navbar class="grid-item navbar"></app-navbar>
     <app-content class="grid-item content"></app-content>
 </div>

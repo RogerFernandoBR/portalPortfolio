@@ -7,11 +7,11 @@ import { LayoutService } from 'src/app/services/layout.service';
   styleUrls: ['./aside.component.scss']
 })
 export class AsideComponent {
-  asideState: boolean = true;
+  hideAside: boolean = true;
 
   constructor(private layoutService: LayoutService) {
     this.layoutService.toggleAsideLeft.subscribe((x) => {
-      this.asideState = x;
+      this.hideAside = x;
     })
   }
 
