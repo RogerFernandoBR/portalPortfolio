@@ -1,0 +1,8 @@
+.menu-hamburger {
+    cursor: pointer;
+    
+    &:hover {
+        background-color: #393939;
+        border-radius: 100%;
+    }
+}

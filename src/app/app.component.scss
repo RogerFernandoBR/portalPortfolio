@@ -1,0 +1,89 @@
+.grid-mercurio {
+    background-color: #0f0f0f;
+    color: #ebebeb;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 70px auto;
+    grid-template-areas: 
+    "aside-left navbar"
+    "aside-left main";
+    transition: 300ms;
+
+    &.hide-aside {
+        grid-template-columns: 0px 1fr;
+        grid-template-areas: 
+        ". navbar"
+        ". main";
+        transition: 300ms;
+    }
+
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.aside-left {
+            grid-row: 1 / 4;
+            height: 100vh;
+            padding-top: 16px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            -webkit-box-shadow: 15px 0px 15px -15px rgba(0,0,0,0.75);
+            -moz-box-shadow: 15px 0px 15px -15px rgba(0,0,0,0.75);
+            box-shadow: 15px 0px 15px -15px rgba(0,0,0,0.75);
+            background-color: #0f0f0f;
+
+            &.hide-aside {
+                grid-template-columns: 0px 1fr;
+                grid-template-areas: 
+                ". navbar"
+                ". main";
+                transition:300ms;
+            }
+        }
+
+        &.navbar {
+            display: flex;
+            justify-content: flex-start;
+            padding: 16px;
+            width: 100%;
+            -webkit-box-shadow: 0px 15px 15px -15px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 15px 15px -15px rgba(0,0,0,0.75);
+            box-shadow: 0px 15px 15px -15px rgba(0,0,0,0.75);
+        }
+
+        &.content {
+            height: calc(100vh - 70px);
+            padding: 16px;
+        }
+
+
+    }
+}
+
+@media (max-width: 700px) {
+    .grid-mercurio {
+        grid-template-columns: 300px 1fr;
+        transition:300ms;
+
+        &.hide-aside {
+            position: absolute;
+            grid-template-columns: 0 1fr;
+            transition:300ms;
+            grid-template-areas: 
+            ". navbar"
+            ". main";
+        }
+
+        &.content {
+            height: calc(100vh);
+            padding: 16px;
+        }
+    
+        &.navbar {
+            height: 55;
+        }
+    }
+}
