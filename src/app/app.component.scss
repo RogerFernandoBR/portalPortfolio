@@ -48,3 +48,18 @@
         }
     }
 }
+
+// Mobile < 700px
+@media (max-width: 700px) {
+    .grid-mercurio {
+        grid-template-columns: 0px auto;
+        transition: 300ms;
+
+        .grid-item {
+            &.aside{
+                position: absolute;	
+	            background-color: #080808;
+            }
+        }
+    }
+}
