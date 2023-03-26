@@ -13,10 +13,15 @@ export class AppComponent {
   title = 'portalPortifolio';
   hideAside: boolean = true;
   viewPortWidth: number = window.innerWidth;
+  useDarkMode: boolean = true;
 
   constructor(private layoutService: LayoutService) {
     this.layoutService.toggleAsideLeft.subscribe((x) => {
       this.hideAside = x;
+    });
+
+    this.layoutService.useDarkMode.subscribe((x) => {
+      this.useDarkMode = x;
     })
   }
 

@@ -1,10 +1,10 @@
 .aside-container {
     width: calc(100% - 32px);
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 16px;
-    transition: 500ms;
 
     &.hide-aside {
         display: none;
@@ -28,7 +28,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        width: 100%;
+        width: calc(300px - 32px);
     }
 
     .btn-close-aside {
@@ -49,6 +49,7 @@
         display: flex;
         flex-direction: column;
         overflow: auto;
+        width: calc(300px - 32px);
 
         .aside-btn {
             border-radius: 10px;

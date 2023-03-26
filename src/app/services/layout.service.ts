@@ -9,6 +9,15 @@ export class LayoutService {
 
   constructor() { }
 
+
+  // Color mode
+  useDarkMode = new BehaviorSubject(true);
+
+  toggleColorMode(useDarkMode?: boolean) {
+    if (typeof (useDarkMode) == "undefined") useDarkMode = !this.useDarkMode.getValue();
+    this.useDarkMode.next(useDarkMode)
+  }
+
   // Aside
   toggleAsideLeft = new BehaviorSubject(false);
 
