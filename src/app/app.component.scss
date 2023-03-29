@@ -1,8 +1,9 @@
+@import "./styles/themes/themes-all";
+
 .grid-mercurio {
     display: grid;
     grid-template-columns: 300px auto;
     grid-template-rows: 70px auto;
-    color: #e3f1e3;
     transition: 300ms;
 
     .grid-item {
@@ -13,9 +14,6 @@
             height: 100vh;
             display: flex;
             z-index: 999;
-            -webkit-box-shadow: 22px 0px 24px -8px rgba(15,12,15,1);
-            -moz-box-shadow: 22px 0px 24px -8px rgba(15,12,15,1);
-            box-shadow: 22px 0px 24px -8px rgb(0 0 0);
         }
 
         &.navbar {
@@ -58,7 +56,6 @@
         .grid-item {
             &.aside{
                 position: absolute;	
-	            background-color: #0f0f0f;
                 transition: 300ms;
             }
         }

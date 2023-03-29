@@ -1,4 +1,4 @@
-<div class="grid-mercurio" [ngClass]="{'hide-aside' : hideAside, 'dark-mode' : useDarkMode}" (window:resize)="onResize()">
+<div class="grid-mercurio" [ngClass]="{'hide-aside' : hideAside, 'theme-dark' : useDarkMode, 'theme-light' : !useDarkMode}" (window:resize)="onResize()">
     <app-aside class="grid-item aside"></app-aside>
     <app-navbar class="grid-item navbar"></app-navbar>
     <app-content class="grid-item content"></app-content>
