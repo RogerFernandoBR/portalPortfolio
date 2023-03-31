@@ -1,35 +1,24 @@
+@import "../grid/grid-all.scss";
+@import "../components/components-all";
 
 $themes: (
   theme-light: (
-    background: #ececec,
-    color: #0f0f0f,
-    hight-light: #c56534,
-    light: #f2f2f2,
-    shadow: 22px 0px 10px -20px rgb(106 106 106),
+    v50 : #ffffff,
+    v100 : #cfcfcf,
+    v200 : #9f9f9f,
+    v300 : #6f6f6f,
+    v400 : #3f3f3f,
+    v500 : #0f0f0f,
   ),
-  theme-dark: (
-    background: #0f0f0f,
-    color: #e3f1e3,
-    hight-light: #c56534,
-    light: #EDFCEA,
-    shadow: 22px 0px 24px -8px rgb(0, 0, 0),
+  theme-dark: (    
+    v50 : #0f0f0f,
+    v100 : #3f3f3f,
+    v200 : #6f6f6f,
+    v300 : #9f9f9f,
+    v400 :#cfcfcf,
+    v500 :#ffffff,
   )
 );
-
-@mixin theme_variables($theme, $background, $color, $hight-light, $light, $shadow) {
-    .#{$theme} {
-        background-color: $background;
-        color: $color;
-
-        .grid-item {
-            &.aside {
-                -webkit-box-shadow: $shadow;
-                -moz-box-shadow: $shadow;
-                box-shadow: $shadow;
-            }
-        }
-    }
-}
 
 @function map-deep-get($map, $keys...) {
     $value: $map;
@@ -40,14 +29,16 @@ $themes: (
 }
 
 @each $class in map-keys($themes) {
-    $background: map-deep-get($themes, $class, background);
-    $color: map-deep-get($themes, $class, color);
-    $hight-light: map-deep-get($themes, $class, hight-light);
-    $light: map-deep-get($themes, $class, light);
-    $shadow:  map-deep-get($themes, $class, shadow);
+    $v50 : map-deep-get($themes, $class, v50);
+    $v100 : map-deep-get($themes, $class, v100);
+    $v200 : map-deep-get($themes, $class, v200);
+    $v300 : map-deep-get($themes, $class, v300);
+    $v400 : map-deep-get($themes, $class, v400);
+    $v500 : map-deep-get($themes, $class, v500);
 
     // INCLUIR TODOS OS MIXINS DE CADA COMPONENTE;
-    @include theme_variables($class, $background, $color, $hight-light, $light, $shadow);
+    @include theme-aside($class, $v50, $v100, $v200, $v300, $v400, $v500);
+    @include theme-grid($class, $v50, $v100, $v200, $v300, $v400, $v500);
    
 }
 
