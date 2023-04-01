@@ -93,26 +93,38 @@
 
                         .description {
                             display: flex;
-                            flex-direction: column;
-                            align-items: center;
+                            flex-direction: row;
+                            align-items: flex-start;
                             margin-left: 16px;
-                            border-left: 5px solid #3f3f3f;
 
-                            .container-btn-item {
+                            .vertical-bar {
+                                width: 5px;
+                                height: 81px;
+                                background-color: #3f3f3f;
+                            }
+
+                            .container-btn {
                                 display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
+                                flex-direction: column;
                                 align-items: center;
                                 width: 100%;
 
-                                .horizontal-bar {
-                                    height: 5px;
-                                    width: 10px;
-                                    background-color: #3f3f3f;
-                                }
-
-                                .aside-btn {
+                                .container-btn-item {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: center;
                                     width: 100%;
+
+                                    .horizontal-bar {
+                                        height: 5px;
+                                        width: 10px;
+                                        background-color: #3f3f3f;
+                                    }
+
+                                    .aside-btn {
+                                        width: 100%;
+                                    }
                                 }
                             }
                         }
