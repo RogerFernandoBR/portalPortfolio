@@ -42,17 +42,6 @@
             &.hide-aside {
                 grid-template-columns: 0px auto;
                 transition: 300ms;
-
-                .grid-item {
-                    &.aside {
-                        .aside-container {
-                            position: absolute;
-                            left: -300px;
-                            transition: 300ms;
-                        }
-
-                    }
-                }
             }
         }
     }
