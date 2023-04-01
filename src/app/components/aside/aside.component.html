@@ -1,16 +1,24 @@
 <div class="aside-container" [ngClass]="{'hide-aside' : hideAside}">
-    <img class="avatar" src="assets/avatar.jpg" alt="Avatar">
-    <h4 class="name">Roger Fernando de O. Carvalho</h4>
-    <i class="gg-close btn-close-aside" (click)="toggleAside()"></i>
+    <div class="header-aside">
+        <img class="avatar" src="assets/avatar.jpg" alt="Avatar">
+        <h4 class="name">Roger Fernando de O. Carvalho</h4>
+        <i class="gg-close btn-close-aside" (click)="toggleAside()"></i>
+    </div>
     <div class="aside-btn-list">
-        <button type="button" class="aside-btn"><i class="gg-boy"></i>Quem é o Roger?</button>
-        <button type="button" class="aside-btn"><i class="gg-card-clubs"></i>Sub item</button>
-        <button type="button" class="aside-btn"><i class="gg-card-clubs"></i>Sub item</button>
-        <button type="button" class="aside-btn"><i class="gg-card-clubs"></i>Sub item</button>
-        <button type="button" class="aside-btn"><i class="gg-terminal"></i>Hard skils</button>
-        <button type="button" class="aside-btn"><i class="gg-smile"></i>Soft skils</button>
-        <button type="button" class="aside-btn"><i class="gg-sand-clock"></i>Cronometro</button>
-        <button type="button" class="aside-btn"><i class="gg-calculator"></i>Calculadora</button>
-        <button type="button" class="aside-btn"><i class="gg-layout-list"></i>To do list</button>
+        <details class="collapse">
+            <summary class="title">
+                <div class="aside-btn" data-bs-toggle="collapse" href="#collapseExample"><i class="gg-boy"></i>Quem é o Roger?</div>
+            </summary>
+            <div class="description">
+                <div class="aside-btn"><i class="gg-terminal"></i>Hard skils</div>
+                <div class="aside-btn"><i class="gg-smile"></i>Soft skils</div>
+            </div>
+        </details>
+        <div class="aside-btn"><i class="gg-card-clubs"></i>Sub item</div>
+        <div class="aside-btn"><i class="gg-card-clubs"></i>Sub item</div>
+        <div class="aside-btn"><i class="gg-card-clubs"></i>Sub item</div>
+        <div class="aside-btn"><i class="gg-sand-clock"></i>Cronometro</div>
+        <div class="aside-btn"><i class="gg-calculator"></i>Calculadora</div>
+        <div class="aside-btn"><i class="gg-layout-list"></i>To do list</div>
     </div>
 </div>
