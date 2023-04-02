@@ -1,4 +1,4 @@
-@mixin theme-aside($theme, $v50, $v100, $v200, $v300, $v400, $v500) {
+@mixin theme-aside($theme, $primary, $v50, $v100, $v200, $v300, $v400, $v500) {
     .#{$theme} {
         .aside {
             .aside-container {
@@ -16,42 +16,131 @@
                     flex-direction: column;
                     align-items: center;
 
-                    &.hide-aside {
-                        display: none;
-                        transition: 500ms
+                    .btn {
+                        position: absolute;
+                        width: 24px;
+                        height: 24px;
+                        top: 0;
+                        left: 0px;
+                        cursor: pointer;
+                    }
+
+                    .btn-left {
+                        background-color: $v300;
+                        position: absolute;
+                        height: 4px;
+                        width: 12px;
+                        top: 0px;
+                        left: 0px;
+                        -webkit-transition-duration: 0.5s;
+                        transition-duration: 0.5s;
+                    }
+
+                    .btn-left:before {
+                        background-color: $v300;
+                        position: absolute;
+                        width: 12px;
+                        height: 4px;
+                        content: "";
+                        top: -12px;
+                        -webkit-transition-duration: 0.5s;
+                        transition-duration: 0.5s;
+                    }
+
+                    .btn-left:after {
+                        background-color: $v300;
+                        position: absolute;
+                        width: 12px;
+                        height: 4px;
+                        content: "";
+                        top: 12px;
+                        -webkit-transition-duration: 0.5s;
+                        transition-duration: 0.5s;
+                    }
+                      
+                    .btn-right {
+                        background-color: $v300;
+                        position: absolute;
+                        height: 4px;
+                        width: 12px;
+                        top: 0px;
+                        left: 12px;
+                        -webkit-transition-duration: 0.5s;
+                        transition-duration: 0.5s;
+                    }
+
+                    .btn-right:before {
+                        background-color: $v300;
+                        position: absolute;
+                        width: 12px;
+                        height: 4px;
+                        content: "";
+                        top: -12px;
+                        -webkit-transition-duration: 0.5s;
+                        transition-duration: 0.5s;
+                    }
+
+                    .btn-right:after {
+                        background-color: $v300;
+                        position: absolute;
+                        width: 12px;
+                        height: 4px;
+                        content: "";
+                        top: 12px;
+                        -webkit-transition-duration: 0.5s;
+                        transition-duration: 0.5s;
+                    }
+                      
+                    .active .btn-left {
+                        -webkit-transition-duration: 0.5s;
+                        transition-duration: 0.5s;
+                        background: transparent;
+                    }
+
+                    .active .btn-left:before {
+                        -webkit-transform: rotateZ(45deg) scaleX(1.4) translate(4px, 4px);
+                        transform: rotateZ(45deg) scaleX(1.4) translate(4px, 4px);
+                    }
+
+                    .active .btn-left:after {
+                        -webkit-transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
+                        transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
+                    }
+
+                    .active .btn-right {
+                        -webkit-transition-duration: 0.5s;
+                        transition-duration: 0.5s;
+                        background: transparent;
+                    }
+
+                    .active .btn-right:before {
+                        -webkit-transform: rotateZ(-45deg) scaleX(1.4) translate(-4px, 4px);
+                        transform: rotateZ(-45deg) scaleX(1.4) translate(-4px, 4px);
+                    }
+
+                    .active .btn-right:after {
+                        -webkit-transform: rotateZ(45deg) scaleX(1.4) translate(-4px, -4px);
+                        transform: rotateZ(45deg) scaleX(1.4) translate(-4px, -4px);
                     }
                 
                     .avatar {
                         border-radius: 100%;
                         max-width: 150px;
-                        border: 5px solid #c56534;
+                        border: 5px solid $primary;
                     }
                 
                     .name {
-                        font-weight: 100 ;
+                        font-weight: 300 ;
                         font-size: 1.4rem;
                         text-align: center;
                         margin: 0;
-                        border-bottom: 1px solid #c56534;
+                        border-bottom: 1px solid $primary;
                         padding: 16px 0;
                         margin-bottom: 16px;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         width: calc(300px - 32px);
-                    }
-                
-                    .btn-close-aside {
-                        position: absolute;
-                        top: 25px;
-                        left: 259px;
-                        cursor: pointer;
-                        --ggs: 2;
-                
-                        &:hover {
-                            background-color: #393939;
-                            border-radius: 100%;
-                        }
                     }
                 }
                 
@@ -88,7 +177,7 @@
 
                     .collapse {
                         .title {
-                            border-left: 5px solid #3f3f3f;
+                            // border-left: 5px solid $v100;
                         }
 
                         .description {
@@ -100,7 +189,7 @@
                             .vertical-bar {
                                 width: 5px;
                                 height: 81px;
-                                background-color: #3f3f3f;
+                                background-color: $v100;
                             }
 
                             .container-btn {
@@ -119,7 +208,7 @@
                                     .horizontal-bar {
                                         height: 5px;
                                         width: 10px;
-                                        background-color: #3f3f3f;
+                                        background-color: $v100;
                                     }
 
                                     .aside-btn {
@@ -140,7 +229,21 @@
                 &.hide-aside {
                     position: absolute;
                     left: -332px;
-                    transition: 300ms;
+                    transition: 300ms;   
+
+                    .container-btn-close {
+                        position: absolute;
+                        top: 28px;
+                        left: 348px; 
+                    }
+                }
+
+                &:not(.hide-aside) {
+                    .container-btn-close {
+                        position: absolute;
+                        top: 28px;
+                        left: 260px;
+                    }
                 }
 
                 @media only screen and (max-width: 700px) {
@@ -166,4 +269,15 @@
             }
         }
     }
+
+    .theme-light {
+        .aside-btn {
+            &:hover, &:active {
+                background-color: $primary !important;
+                color: #ffffff !important;
+            }
+        }
+    }
+
+    
 }
