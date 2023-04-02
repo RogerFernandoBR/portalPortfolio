@@ -1,4 +1,4 @@
-@mixin theme-grid($theme, $primary, $v50, $v100, $v200, $v300, $v400, $v500) {
+@mixin theme-grid($theme, $v50, $v100, $v200, $v300, $v400, $v500) {
     .#{$theme} {
         background-color: $v50;
         color: $v500;

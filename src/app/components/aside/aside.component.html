@@ -1,6 +1,6 @@
 <div class="aside-container" [ngClass]="{'hide-aside' : hideAside}">
     <div class="header-aside">
-        <img class="avatar" src="assets/avatar.jpg" alt="Avatar">
+        <img class="avatar" src="assets/avatar.png" alt="Avatar">
         <h4 class="name">Roger Fernando Carvalho</h4>
         <div class="container-btn-close" [ngClass]="{'active' : !hideAside}" (click)="toggleAside()">
             <div class="btn">
@@ -17,6 +17,10 @@
             <div class="description">
                 <div class="vertical-bar"></div>
                 <div class="container-btn">
+                    <div class="container-btn-item">
+                        <div class="horizontal-bar"></div>
+                        <div class="aside-btn"><i class="gg-terminal"></i>Sobre</div>
+                    </div>
                     <div class="container-btn-item">
                         <div class="horizontal-bar"></div>
                         <div class="aside-btn"><i class="gg-terminal"></i>Hard skils</div>
