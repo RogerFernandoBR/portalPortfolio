@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
+import { LayoutService } from 'src/app/services/layout.service';
 
 @Component({
   selector: 'app-about',
@@ -15,7 +16,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   //* Stage Properties
 
-  @Input() public fieldOfView: number = 1;
+  @Input() public fieldOfView: number = 50;
 
   @Input('nearClipping') public nearClippingPane: number = 1;
 
@@ -60,7 +61,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
    */
   private animateModel() {
     if (this.model) {
-      this.model.rotation.z += 0.005;
+      // this.model.rotation.z += 0.005;
     }
   }
 
@@ -93,7 +94,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     //* Scene
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x0f0f0f)
-    this.loaderGLTF.load('assets/robot/scene.gltf', (gltf: GLTF) => {
+    this.loaderGLTF.load('assets/truck/scene.gltf', (gltf: GLTF) => {
       this.model = gltf.scene.children[0];
       console.log(this.model);
       var box = new THREE.Box3().setFromObject(this.model);
@@ -112,22 +113,22 @@ export class AboutComponent implements OnInit, AfterViewInit {
     this.camera.position.x = 100;
     this.camera.position.y = 100;
     this.camera.position.z = 100;
-    this.ambientLight = new THREE.AmbientLight(0x00000, 100);
-    this.scene.add(this.ambientLight);
-    this.directionalLight = new THREE.DirectionalLight(0xffdf04, 0.4);
-    this.directionalLight.position.set(0, 1, 0);
+    // this.ambientLight = new THREE.AmbientLight(0x5e6900, 1);
+    // this.scene.add(this.ambientLight);
+    this.directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    this.directionalLight.position.set(0, 100, 0);
     this.directionalLight.castShadow = true;
     this.scene.add(this.directionalLight);
-    this.light1 = new THREE.PointLight(0x4b371c, 10);
-    this.light1.position.set(0, 200, 400);
+    this.light1 = new THREE.PointLight(0xffffff, 1);
+    this.light1.position.set(0, 200, 1);
     this.scene.add(this.light1);
-    this.light2 = new THREE.PointLight(0x4b371c, 10);
+    this.light2 = new THREE.PointLight(0xffffff, 1);
     this.light2.position.set(500, 100, 0);
     this.scene.add(this.light2);
-    this.light3 = new THREE.PointLight(0x4b371c, 10);
+    this.light3 = new THREE.PointLight(0xffffff, 1);
     this.light3.position.set(0, 100, -500);
     this.scene.add(this.light3);
-    this.light4 = new THREE.PointLight(0x4b371c, 10);
+    this.light4 = new THREE.PointLight(0xffffff, 1);
     this.light4.position.set(-500, 300, 500);
     this.scene.add(this.light4);
   }
@@ -156,7 +157,14 @@ export class AboutComponent implements OnInit, AfterViewInit {
     }());
   }
 
-  constructor() { }
+  constructor(private LayoutService: LayoutService) {
+    LayoutService.useDarkMode.subscribe((x) => {
+      if (this.scene) {
+        if (x) this.scene.background = new THREE.Color(0x0f0f0f);
+        else this.scene.background = new THREE.Color(0xffffff)
+      }
+    });
+  }
 
   ngOnInit(): void {
 
