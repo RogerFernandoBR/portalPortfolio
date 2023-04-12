@@ -9,6 +9,13 @@ import { ContentComponent } from './components/content/content.component';
 import { ButtonModeComponent } from './components/button-mode/button-mode.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { ModelingComponent } from './components/modeling/modeling.component';
+import { WeatherComponent } from './components/weather/weather.component';
+import { TictactoeComponent } from './components/tictactoe/tictactoe.component';
+import { ClockComponent } from './components/clock/clock.component';
+import { CronometerComponent } from './components/cronometer/cronometer.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +26,13 @@ import { AboutComponent } from './components/about/about.component';
     ButtonModeComponent,
     HomeComponent,
     AboutComponent,
+    ModelingComponent,
+    WeatherComponent,
+    TictactoeComponent,
+    ClockComponent,
+    CronometerComponent,
+    CalculatorComponent,
+    TodoComponent,
   ],
   imports: [
     BrowserModule,
