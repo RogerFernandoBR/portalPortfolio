@@ -22,11 +22,18 @@ export class AppComponent {
 
     this.layoutService.useDarkMode.subscribe((x) => {
       this.useDarkMode = x;
+      let body = document.getElementsByTagName("body")[0];
+      body.classList.remove("theme-dark");
+      body.classList.remove("theme-light");
+      if (x) body.classList.add("theme-dark");
+      else body.classList.add("theme-light");
     })
   }
 
   ngOnInit() {
     this.onResize();
+
+    
   }
 
   onResize() {

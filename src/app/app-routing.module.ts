@@ -10,13 +10,20 @@ import { ModelingComponent } from './components/modeling/modeling.component';
 import { CronometerComponent } from './components/cronometer/cronometer.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { SoftSkillsComponent } from './components/soft-skills/soft-skills.component';
+import { HardSkillsComponent } from './components/hard-skills/hard-skills.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: RoutePages.Root, redirectTo: RoutePages.About, pathMatch: 'full'},
-  { path: RoutePages.Home, redirectTo:  RoutePages.About, pathMatch: 'full' },
-  { path: RoutePages.SoftSkills, redirectTo:  RoutePages.About, pathMatch: 'full' },
-  { path: RoutePages.HardSkills, redirectTo:  RoutePages.About, pathMatch: 'full' },
-  { path: RoutePages.About, component: AboutComponent },
+  { path: RoutePages.Root, redirectTo: RoutePages.Home, pathMatch: 'full'},
+  { path: RoutePages.Home, children: [
+      { path: RoutePages.Root, redirectTo: RoutePages.Home, pathMatch: 'full'},
+      { path: RoutePages.Home, component: HomeComponent},
+      { path: RoutePages.About, component: AboutComponent },
+      { path: RoutePages.SoftSkills, component: SoftSkillsComponent},
+      { path: RoutePages.HardSkills, component: HardSkillsComponent},
+		]
+	},
   { path: RoutePages.Weather, component: WeatherComponent },
   { path: RoutePages.TicTacToe, component: TictactoeComponent },
   { path: RoutePages.Clock, component: ClockComponent },

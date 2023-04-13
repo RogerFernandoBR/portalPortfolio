@@ -171,8 +171,8 @@
                             margin-right: 16px;
                         }
             
-                        &:hover, &:active {
-                            background-color: $dark;
+                        &:hover, &.selected {
+                            background-color: $medium;
                         }
                     }
 
@@ -211,8 +211,8 @@
                                     .aside-btn {
                                         width: 100%;
 
-                                        &:hover, &:active {
-                                            background-color: $medium;
+                                        &:hover, &.selected {
+                                            background-color: $dark;
                                         }
                                     }
                                 }
@@ -283,7 +283,7 @@
 
                 .aside-btn-list {
                     .aside-btn {
-                        &:hover, &:active {
+                        &:hover, &.selected {
                             background-color: $primary !important;
                             color: $white !important;
                         }
@@ -302,7 +302,7 @@
                                     }
 
                                     .aside-btn {
-                                        &:hover, &:active {
+                                        &:hover, &.selected {
                                             background-color: $secondary !important;
                                             color: $darker !important;
                                         }

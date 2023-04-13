@@ -155,14 +155,7 @@ export class ModelingComponent implements OnInit, AfterViewInit {
     }());
   }
 
-  constructor(private LayoutService: LayoutService) {
-    LayoutService.useDarkMode.subscribe((x) => {
-      if (this.scene) {
-        if (x) this.scene.background = new THREE.Color(0x0f0f0f);
-        else this.scene.background = new THREE.Color(0xffffff)
-      }
-    });
-  }
+  constructor(private layoutService: LayoutService) {}
 
   ngOnInit(): void {
 
@@ -172,5 +165,12 @@ export class ModelingComponent implements OnInit, AfterViewInit {
     this.createScene();
     this.startRenderingLoop();
     this.createControls();
+
+    this.layoutService.useDarkMode.subscribe((x) => {
+      if (this.scene) {
+        if (x) this.scene.background = new THREE.Color(0x0f0f0f);
+        else this.scene.background = new THREE.Color(0xffffff)
+      }
+    });
   }
 }

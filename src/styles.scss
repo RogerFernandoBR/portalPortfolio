@@ -20,9 +20,28 @@ html, body {
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: #272727;
+        background-color: $dark;
+        border-radius: 4px;
+    }
+
+    &.theme-light {
+        ::-webkit-scrollbar-thumb {
+            background-color: $primary;
+        }
     }
 }
+
+@mixin theme-grid($theme, $v50, $v100, $v200, $v300, $v400, $v500) {
+
+        // ::-webkit-scrollbar-thumb {
+        //     background-color: #272727;
+        // }
+        html, body {
+            ::-webkit-scrollbar-thumb {
+                background-color: $v300;
+            }
+        }
+    }
 
 // Removing default styles
 button {

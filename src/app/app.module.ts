@@ -16,6 +16,8 @@ import { ClockComponent } from './components/clock/clock.component';
 import { CronometerComponent } from './components/cronometer/cronometer.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { SoftSkillsComponent } from './components/soft-skills/soft-skills.component';
+import { HardSkillsComponent } from './components/hard-skills/hard-skills.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { TodoComponent } from './components/todo/todo.component';
     CronometerComponent,
     CalculatorComponent,
     TodoComponent,
+    SoftSkillsComponent,
+    HardSkillsComponent,
   ],
   imports: [
     BrowserModule,
